@@ -12,7 +12,7 @@ IntList::IntList(const IntList& source) {
     Node *cur = source.first; 
  
     while(cur != NULL){
-        append(cur->info);                             //append to what?
+        append(cur->info);            //append to what?
         cur = cur->next; 
     }
 }
@@ -23,7 +23,7 @@ IntList::~IntList() {
         Node* temp;   
  	while(hptr){
  		temp = hptr->next; 
- 		delete(hptr);
+ 		free(hptr);
  		hptr = temp; 
  	}
  	hptr = 0;  
@@ -94,6 +94,11 @@ void IntList::insertFirst(int value) {
 //to this list, deleting/replacing any existing nodes
 IntList& IntList::operator=(const IntList& source){
     //IMPLEMENT
+    first = NULL;
+    
+    for(Node *i = source.first; i != NULL; i = i->next){
+	append(i->info); 
+    }
     return *this;
 }
 
