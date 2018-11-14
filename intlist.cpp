@@ -20,7 +20,7 @@ IntList::IntList(const IntList& source) {
 // destructor deletes all nodes
 IntList::~IntList() {
  	Node* hptr = first;
-        Node* temp;   
+        Node* temp = new Node();   
  	while(hptr){
  		temp = hptr->next; 
  		free(hptr);
