@@ -19,7 +19,8 @@ IntList::IntList(const IntList& source) {
 
 // destructor deletes all nodes
 IntList::~IntList() {
-        Node* temp = new Node;   
+       // Node* temp = new Node;
+       struct Node *temp;   
  	while(first){
  		temp = first->next; 
  		free(first);
