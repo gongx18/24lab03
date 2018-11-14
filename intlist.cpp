@@ -19,14 +19,12 @@ IntList::IntList(const IntList& source) {
 
 // destructor deletes all nodes
 IntList::~IntList() {
- 	Node* hptr = first;
-        Node* temp = NULL;   
- 	while(hptr){
- 		temp = hptr->next; 
- 		free(hptr);
- 		hptr = temp; 
- 	}
- 	hptr = 0;  
+        Node* temp = new Node;   
+ 	while(first){
+ 		temp = first->next; 
+ 		free(first);
+ 		first = temp; 
+ 	} 
 }
 
 
